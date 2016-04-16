@@ -1,10 +1,18 @@
 module PakketHub::CoreFunctionality
   def self.included(base)
     base.send(:attr_accessor, :developer_driven, :system_driven)
-    #base.send(:extend, ClassMethods)
+    base.send(:extend, ClassMethods)
   end
 
   module ClassMethods
+    def const_missing(constant)
+      framework_member = "PakketHub::#{constant}"
+      if const_defined?(framework_member) && constant.to_s != "PakketHub"
+        const_get(framework_member)
+      else
+        super
+      end
+    end
   end
 
   def load_through(list, assoc)

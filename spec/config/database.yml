@@ -6,6 +6,6 @@ test:
 
 development:
   adapter: mysql2
-  database: pakket_hub
+  database: pakket_hub_development
   host: localhost
   username: root
