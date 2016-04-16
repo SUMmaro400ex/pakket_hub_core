@@ -12,6 +12,13 @@ ActiveRecord::Base.establish_connection(ActiveRecord::Base.configurations['devel
 # (If you use this, don't forget to add pry to your Gemfile!)
 # require "pry"
 # Pry.start
+require 'log4r'
+Log4r::StderrOutputter.new('console')
+log = Log4r::Logger.new('logger')
+log.add('console')
+log.level = 0
+ActiveRecord::Base.logger = log
+
 include PakketHub
 
 require "irb"
