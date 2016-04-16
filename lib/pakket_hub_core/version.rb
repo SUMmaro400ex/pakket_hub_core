@@ -1,3 +1,3 @@
-module PakketHubCore
+module PakketHub
   VERSION = "0.1.0"
 end

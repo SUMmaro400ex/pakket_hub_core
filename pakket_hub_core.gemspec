@@ -5,7 +5,7 @@ require 'pakket_hub_core/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "pakket_hub_core"
-  spec.version       = PakketHubCore::VERSION
+  spec.version       = PakketHub::VERSION
   spec.authors       = ["Grady Griffin"]
   spec.email         = ["ggriffin@carecloud.com"]
 

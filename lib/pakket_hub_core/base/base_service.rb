@@ -1,4 +1,4 @@
-require 'packket_hub_core/base/core_functionality'
+require 'pakket_hub_core/base/core_functionality'
 
 class PakketHub::BaseService
   include PakketHub::CoreFunctionality
