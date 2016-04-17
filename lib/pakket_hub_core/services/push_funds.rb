@@ -1,9 +1,8 @@
 class PushFunds
   attr_accessor :exchange, :post_response, :transaction_identifier
 
-  def initialize
-    # (exchange)
-    # @exchange = exchange
+  def initialize(exchange)
+    @exchange = exchange
   end
 # Sample post body payload
 
@@ -65,9 +64,7 @@ class PushFunds
           :payload => post_pay_load,
           :user => user_id, :password => password,
           :ssl_client_key => OpenSSL::PKey::RSA.new(PakketHub.visa_client_key),
-          # PakketHub.visa_client_key
           :ssl_client_cert =>  OpenSSL::X509::Certificate.new(PakketHub.visa_client_cert)
-          # PakketHub.visa_client_cert
       )
     rescue RestClient::ExceptionWithResponse => e
       response = e.response
