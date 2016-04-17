@@ -1,4 +1,5 @@
 require 'ostruct'
+require 'bigdecimal'
 require 'active_record'
 require 'active_support/inflector'
 require 'active_support/core_ext/array'

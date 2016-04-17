@@ -1,7 +1,5 @@
 FactoryGirl.define do
-
-  factory :user, class: CentralFramework::Charge do
-
+  factory :user, class: PakketHub::User do
 
   end
 end
