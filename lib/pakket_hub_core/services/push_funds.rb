@@ -81,11 +81,10 @@ class PushFunds
 
   def push_funds
     feth_post_response
-    # update_exchange if transaction_identifier
+    update_exchange if transaction_identifier
   end
 
   def transaction_identifier
-    byebug
     @transaction_identifier ||= JSON.parse(@post_response)["transactionIdentifier"]
   end
 
