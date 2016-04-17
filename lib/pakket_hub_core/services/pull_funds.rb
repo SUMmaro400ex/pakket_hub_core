@@ -72,8 +72,8 @@ class PullFunds
           :headers => headers,
           :payload => post_pay_load,
           :user => user_id, :password => password,
-          :ssl_client_key => OpenSSL::PKey::RSA.new(File.read(key_path)),
-          :ssl_client_cert =>  OpenSSL::X509::Certificate.new(File.read(cert_path))
+          :ssl_client_key => OpenSSL::PKey::RSA.new(PakketHub.visa_client_key),
+          :ssl_client_cert =>  OpenSSL::X509::Certificate.new(PakketHub.visa_client_cert)
       )
     rescue RestClient::ExceptionWithResponse => e
       response = e.response
