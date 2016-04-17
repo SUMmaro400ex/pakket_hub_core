@@ -46,9 +46,7 @@ class PakketHub::TravelPlanSearcher < PakketHub::BaseService
     TravelPlan.where("travel_plans.size_code <= ?", request.size_code).
       joins(:destination).
       where("travel_plans.end_date IS NULL OR travel_plans.end_date >= ?", request.start_date).
-      where("travel_plans.end_time IS NULL OR travel_plans.end_time > ?", request.start_time).
       where("travel_plans.start_date <= ?", request.end_date).
-      where("travel_plans.start_time < ?", request.end_time).
       where(equation_sql_part, lat, lng, lng, radius)
   end
 
